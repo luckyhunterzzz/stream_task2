@@ -29,7 +29,7 @@ public class Main {
         // Так как требуется получить список List<String> терминальным методом будет collect(Collectors.toList()).
         Stream<Person> streamMilitaryPerson = persons.stream();
         List<String> surnamesMilitaryPerson = streamMilitaryPerson
-                .filter(x -> (x.getAge() >= 18 && x.getAge() <= 27))
+                .filter(x -> (x.getAge() >= 18 && x.getAge() <= 27) && x.getSex() == Sex.MAN)
                 .map(Person::getFamily)
                 .collect(Collectors.toList());
         //Для получения отсортированного по фамилии списка потенциально работоспособных людей с высшим образованием
